@@ -7,6 +7,7 @@ specifiers:
   '@radix-ui/react-dialog': 1.0.3
   '@radix-ui/react-select': 1.2.1
   '@radix-ui/react-toast': 1.1.3
+  '@sanity/image-url': ^1.0.2
   '@sanity/portable-text-editor': 3.10.3
   '@sanity/ui': 1.3.3
   '@sanity/vision': 3.10.3
@@ -50,6 +51,7 @@ dependencies:
   '@radix-ui/react-dialog': 1.0.3_3sauqnnrv7lnox3glal4dmngp4
   '@radix-ui/react-select': 1.2.1_3sauqnnrv7lnox3glal4dmngp4
   '@radix-ui/react-toast': 1.1.3_biqbaboplfbrettd7655fr4n2y
+  '@sanity/image-url': 1.0.2
   '@sanity/portable-text-editor': 3.10.3_mmmqsapr25dywudz7sm65h4tfy
   '@sanity/ui': 1.3.3_xv2oyui36dvc7ofqweato72dmq
   '@sanity/vision': 3.10.3_arrw4b4uqc7bifp5hgmny73xnq
