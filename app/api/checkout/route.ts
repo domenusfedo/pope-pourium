@@ -11,7 +11,7 @@ import { stripe } from "@/lib/stripe"
 
 export async function POST(request: Request) {
   const cartDetails = await request.json()
-  const inventoryElements = await client.fetch<SanityProduct[]>(
+  const inventoryFromSanity = await client.fetch<SanityProduct[]>(
     groq`*[_type == "product"] {
       _id,
       _createdAt,
@@ -29,14 +29,12 @@ export async function POST(request: Request) {
     }`
   )
 
-  const idk = inventoryElements.map((inventoryElement) => ({
+  const inventoryElements = inventoryFromSanity.map((inventoryElement) => ({
     ...inventoryElement,
     images: inventoryElement.images.map((image) => urlForImage(image).url()),
   }))
-  const lineItems = validateCartItems(idk, cartDetails)
+  const lineItems = validateCartItems(inventoryElements, cartDetails)
   const origin = request.headers.get("origin")
-
-  console.log("Data from SANITY to check", idk, lineItems)
 
   const session = await stripe.checkout.sessions.create({
     submit_type: "pay",
